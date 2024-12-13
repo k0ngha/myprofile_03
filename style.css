@@ -5,6 +5,9 @@ html {
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     background-color: #eee;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 * {
@@ -13,11 +16,9 @@ body {
 }
 
 #main {
-    padding: 66px 38px 0;
-    width: 430px;
-    height: 932px;
+    padding: 66px 38px;
+    width: 100%;
     max-width: 430px;
-    max-height: 932px;
     background-color: #fff;
     position: relative;
 }
@@ -27,6 +28,7 @@ body {
     font-size: 4.2rem;
     font-weight: 800;
     line-height: 5.4rem;
+    white-space: nowrap;
 }
 
 .name span {
@@ -55,7 +57,7 @@ section div p.desc {
 
 .notice {
     width: 100%;
-    height: 42px;
+    height: auto;
     border-radius: 16px;
     border: 1px solid #EEEEEE;
     margin: 20px 0;
@@ -84,6 +86,7 @@ section div p.desc {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 14.6rem 10rem 14.6rem;
     gap: 2rem;
+    margin-bottom: 60px;
 }
 
 .box__wrap div {
@@ -160,5 +163,61 @@ footer .copyright {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #main {
+        padding: 60px 32px;
+    }
+    .s-device {
+        display: block !important;
+    }
+
+    .store__info {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .notice {
+        white-space: nowrap;
+        gap: 1.6rem;
+        align-items: stretch;
+    }
+
+    .notice p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box__wrap {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 10rem);
+        margin-bottom: 100px;
+    }
+
+    .box__wrap div {
+        grid-column: 1/2;
+    }
+
+    .map {
+        background: url(sources/img-03.jpg) no-repeat right -14px bottom -4px / 110%;
+    }
+
+    footer {
+        padding: 38px 34px;
+        display: block;
+    }
+
+    footer .contents {
+        align-items: flex-start;
+    }
+
+    footer .link {
+        flex-direction: column;
+    }
+
+    footer .link a {
+        white-space: nowrap;
     }
 }
